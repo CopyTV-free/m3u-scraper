@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M3U Link Scraper Tool</title>
+    <title>M3U ลิสต์อนิเมะ Scraper</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>M3U & Video Link Scraper</h1>
-        <p class="subtitle">เครื่องมือดึงลิงก์วิดีโอสตรีมมิ่ง (.m3u8/.mp4)</p>
+        <p class="subtitle">เครื่องมือดึงลิงก์วิดีโออนิเมะ (.m3u8) ทั้งหน้าอัตโนมัติ</p>
         
         <div class="input-group">
-            <label for="targetUrl">ใส่ URL ของหน้าเว็บที่ต้องการดึงลิงก์:</label>
-            <input type="url" id="targetUrl" placeholder="https://example.com/watch-anime..." required>
-            <button id="scrapeBtn">เริ่มดึงข้อมูล (Scrape)</button>
+            <label for="targetUrl">ใส่ URL หน้าหลักของอนิเมะเรื่องที่ต้องการดึง:</label>
+            <input type="url" id="targetUrl" placeholder="https://animemeiji.com/อนิเมะเรื่อง..." required>
+            <button id="scrapeBtn">เริ่มดึงข้อมูลทุกตอน (Scrape All)</button>
         </div>
 
         <div class="status" id="statusText">พร้อมใช้งาน</div>
 
         <div class="result-box" id="resultContainer" style="display: none;">
-            <h3>ผลลัพธ์ลิงก์วิดีโอที่พบ:</h3>
-            <textarea id="outputUrls" readonly rows="8"></textarea>
-            <button id="copyBtn">คัดลอกทั้้งหมด</button>
-            <button id="downloadM3uBtn">ดาวน์โหลดเป็นไฟล์ .m3u</button>
+            <h3>ผลลัพธ์ไฟล์ M3U (คัดลอกไปใส่แอป IPTV หรือ VLC ได้ทันที):</h3>
+            <textarea id="outputUrls" readonly rows="12"></textarea>
+            <div class="btn-group">
+                <button id="copyBtn">คัดลอกโค้ดทั้งหมด</button>
+                <button id="downloadM3uBtn">ดาวน์โหลดเป็นไฟล์ .m3u</button>
+            </div>
         </div>
     </div>
 
