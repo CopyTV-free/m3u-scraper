@@ -135,4 +135,14 @@ document.getElementById('copyBtn').addEventListener('click', () => {
 });
 
 // ฟังก์ชันดาวน์โหลดเป็นไฟล์ .m3u อัตโนมัติ
-document
+document.getElementById('downloadM3uBtn').addEventListener('click', () => {
+    const text = document.getElementById('outputUrls').value;
+    if(!text) return;
+    const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'anime_playlist.m3u';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+});
